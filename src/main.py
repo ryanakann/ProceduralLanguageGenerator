@@ -5,11 +5,16 @@ from src.commands.generate import GenerateCommand
 from src.commands.translate import TranslateCommand
 
 def main():
-    parser = ArgumentParser(prog='plg')
-    parser.add_argument('command', help="The command you want to run.", choices=COMMANDS)
+    parser = ArgumentParser(prog="plg")
+    parser.add_argument("command", help="The command you want to run.", choices=COMMANDS)
+
+    subparsers = parser.add_subparsers(help="subparser help", dest="subparser")
+    generate_parser = subparsers.add_parser(GENERATE_COMMAND, help="generate help")
+    translate_parser = subparsers.add_parser(TRANSLATE_COMMAND, help="translate help")
+
     args = parser.parse_args()
-    
+
     if args.command == GENERATE_COMMAND:
-        GenerateCommand(parser)
+        GenerateCommand(generate_parser)
     elif args.command == TRANSLATE_COMMAND:
-        TranslateCommand(parser)
+        TranslateCommand(translate_parser)
