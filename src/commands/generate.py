@@ -9,15 +9,15 @@ import os
 class GenerateCommand(Command):
     def __init__(self, parser):
         super().__init__(parser)
-        self.output = {}
-        self.generate()
-        self.write_language_to_file(self.output)
+        output = self.generate()
+        self.write_language_to_file(output)
 
     # This is a really naive and goofy "language" generator.
     # Just getting some code out there, will enhance a LOT from here.
     # Does not obey sonority sequencing and does not preserve like-words.
     # For instance, "pen" might map to "vdiunth" and "pencil" to "pqttiot". Pretty bad.
     def generate(self):
+        output = {}
         for word in WORDS:
             # I don't want to deal with goofy words at the moment
             # Filter out everything non-alphabetical
@@ -28,7 +28,8 @@ class GenerateCommand(Command):
                     # randint is inclusive on both ends
                     index = randint(0, len(IRA_SOUNDS) - 1)
                     new_word += IRA_SOUNDS[index]
-                self.output[word] = new_word
+                output[word] = new_word
+        return output
     
     def write_language_to_file(self, output):
         if not os.path.exists("out"):
