@@ -37,11 +37,11 @@ To be honest I don't really know what I'm doing. My current plan is to take a bu
 
 ### Phase 1
 
-Create a procedurally generated encoding of English based on the Sonority Sequencing principal as described in the [Glish video][glish]. This will be a simple encoder that takes in English sentences as input and outputs some mapping of words in Kenyon and Knott (KK) spelling.
+Create a procedurally generated encoding of English based on the Sonority Sequencing principal as described in the [Glish video][glish]. This will be a simple encoder that takes in English sentences as input and outputs some mapping of words in [International Phonetic Alphabet (IRA) spelling](ira).
 
 ### Phase 2
 
-Assign sounds or sequences of sounds in the KK output above to alphabetical characters. Here are some examples using real languages:
+Assign sounds or sequences of sounds in the IRA output above to alphabetical characters. Here are some examples using real languages:
 
 * /ʧ/ -> English -> ch -> Example: chime
 * /ʧ/ -> Italian -> c or cc -> Example: Vinci
@@ -64,3 +64,4 @@ Procedurally generated associated written language. To be honest this could be a
 [glish]: https://www.youtube.com/watch?v=sRbcw2sGkJw
 [seraphim]: https://www.youtube.com/watch?v=EOctKnETWi4
 [uppestcase]: https://www.youtube.com/watch?v=HLRdruqQfRk
+[ira]: https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
